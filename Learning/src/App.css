@@ -1,0 +1,33 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.style{
+  color: blueviolet;
+  background-color: rgb(187, 161, 126);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card{
+  background-color: burlywood;
+  text-align: center;
+  width: 750px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px gray;
+  margin-bottom: 35px;
+  margin-top: 30px;
+}
+
+.card p{
+  font-size:xx-large;
+  margin-bottom: 10px;
+}
+
+.card h2{
+  font-weight: bolder;
+  color: antiquewhite;
+}
