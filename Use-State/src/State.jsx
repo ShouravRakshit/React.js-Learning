@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import  { Component } from "react";
 
 export default class State extends Component {
     
@@ -6,14 +6,23 @@ export default class State extends Component {
       super(props)
     
       this.state = {
-         count : 0
+         count : 10
       }
+    }
+
+    increaseNumber = () => {
+      this.setState({
+        count: this.state.count + 1
+      })
+      
     }
     
     render() {
     return (
       <div>
         <h1>Count : {this.state.count}</h1>
+        <button onClick={this.increaseNumber}>+</button>
+        <button type="button">{this.decreaseNumber}</button>
       </div>
     );
   }
