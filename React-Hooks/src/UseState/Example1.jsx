@@ -3,7 +3,9 @@ import React, { useState } from 'react'
 const Example1 = () => {
   const [count, setCount] = useState(20);
   const handleNumber = () =>{
-    setCount(count + 10);
+    setCount((prevcount) => prevcount + 1)
+    setCount((prevcount) => prevcount + 1)
+
   }
   return (
     <div>
