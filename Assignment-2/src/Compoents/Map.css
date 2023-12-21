@@ -1,0 +1,10 @@
+.map{
+    color: rgb(30, 185, 185);
+    list-style:circle;
+    text-align: center;
+    font-size: xx-large;
+}
+
+li{
+    margin-bottom: 16px;
+}
