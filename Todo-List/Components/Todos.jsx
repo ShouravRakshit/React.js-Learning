@@ -2,6 +2,7 @@ import Todo from './Todo';
 import "../styles/todos.css"
 
 const Todos = (props) => {
+ 
     const {todos} = props;
     
   return (
