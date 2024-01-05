@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Todo from "../Components/Todo";
 
 const handleForm = (event) => {
   event.preventDefault();
@@ -6,16 +7,28 @@ const handleForm = (event) => {
 };
 
 function App() {
+  const [count, setCount] = useState(0);
   const demoRef = useRef();
 
   const fName = useRef();
   const lName = useRef();
 
+  const increaseNumber = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const decreaseNumber = () => {
+    setCount((prevCount) => prevCount - 1);
+  };
+
+  const resetNumber = () => {
+    setCount(0);
+  };
   const changeName = () => {
     const firstName = fName.current.value;
     const lastName = lName.current.value;
-    alert(firstName + ""  + lastName);
-  }
+    alert(firstName + "" + lastName);
+  };
 
   const Change = () => {
     demoRef.current.innerText = "UseRef";
@@ -76,8 +89,18 @@ function App() {
         <input ref={fName} type="text" name="fname" id="fname" /> <br /> <br />
         <label htmlFor="fname">Last Name : </label>
         <input ref={lName} type="text" name="lname" id="lname" /> <br /> <br />
-        <button onClick={changeName} type="button">Submit Name</button>
+        <button onClick={changeName} type="button">
+          Submit Name
+        </button>
       </div>
+
+      <div>
+        <h2>You are on number : {count}</h2>
+        <button type="button" onClick={increaseNumber}>+</button>
+        <button type="button" onClick={resetNumber}>Reset</button>
+        <button type="button" onClick={decreaseNumber}>-</button>
+      </div>
+      <Todo />
     </>
   );
 }
