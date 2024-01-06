@@ -1,3 +1,4 @@
+import Form from "./Components/form"
 
 
 function App() {
@@ -5,7 +6,8 @@ function App() {
   return (
     <>
      
-      
+        <Form />
+
     </>
   )
 }
