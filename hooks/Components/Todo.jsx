@@ -1,9 +1,52 @@
-import React from 'react'
+import { useState } from "react";
 
 const Todo = () => {
-  return (
-    <div>Todo</div>
-  )
-}
+  const [item, setItem] = useState("");
+  const [list, setList] = useState([]);
 
-export default Todo
+  const captureItem = (event) => {
+  
+    setItem(event.target.value);
+  };
+
+  const addItem = () => {
+    list.push(item);
+    setList([...list]);
+  };
+
+  return (
+    <>
+      <h1>Todo</h1>
+      <table>
+        
+        {list.length !== 0? (
+            list.map((ele, index) => {
+                return(
+                    <tr  key={index}>
+                        <td style={{fontSize: "25px"}}> {ele} </td>
+                        <button style={{borderRadius: "10px", padding: "10px 15px", backgroundColor: "#B80000", cursor: "pointer"}}>Remove</button>
+                    </tr>
+                    
+
+                )
+            })
+        ):(
+            <tr>{"Nothing to show for now !!!"}</tr>
+        )}
+       
+      </table>
+      <input
+        onChange={captureItem}
+        placeholder="todo"
+        type="text"
+        name=""
+        id=""
+      />
+      <button type="button" onClick={addItem}>
+        Add
+      </button>
+    </>
+  );
+};
+
+export default Todo;
