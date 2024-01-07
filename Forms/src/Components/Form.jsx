@@ -1,32 +1,72 @@
-import { useState } from "react"
+import { useState } from "react";
+// in order to identify each field we use that name thing on the input tag.
+// we use value property to controll the input tag so that we can change the state of that element.
 
 const Form = () => {
+  const [form, setForm] = useState({
+    fName: "",
+    lName: "",
+    city: "",
+    gender: "Male"
+  });
 
-    const [form, setForm] = useState({
-        fName: "",
-        lName: "",
-        city: "",
-        gender: "Male"
+ 
 
-    });
+  const handleChange = (event) => {
+    setForm({...form, [event.target.name]: event.target.value})
+    console.log(event.target.name);
+  };
+
+  const submitForm = (event) => {
+    event.preventDefault();
+    console.log(form);
+    console.log("Form Submit");
+  };
+
   return (
     <div className="container">
-        <form action="">
-            <input value={form.fName} placeholder="First Name"/> <br />
-            <input value={form.lName} placeholder="First Name" /> <br />
-            <select value={form.city}>
-                <option value="">Choose City</option>
-                <option value="Dhaka">Dhaka</option>
-                <option value="Rangpur">Rangpur</option>
-            </select>
-            <br />
-            <input checked={form.gender === "Male"} type="radio" name="gender"/>Male
-            <input checked={form.gender === "Female"} type="radio" name="gender"/>Female
-            <br />
-            <button type="submit">Submit</button>
-        </form>
+      <form action="" onSubmit={submitForm}>
+        <input
+          onChange={handleChange}
+          value={form.fName}
+          placeholder="First Name"
+          name="fName"
+        />
+        <br />
+        <input
+          onChange={handleChange}
+          value={form.lName}
+          placeholder="Last Name"
+          name="lName"
+        />
+        <br />
+        <select 
+        value={form.city} 
+        onChange={handleChange} name="city">
+          <option value="">Choose City</option>
+          <option value="Dhaka">Dhaka</option>
+          <option value="Rangpur">Rangpur</option>
+        </select>
+        <br />
+        <input
+          onChange={handleChange}
+          checked={form.gender === "Male"}
+          type="radio"
+          name="gender"
+        />
+        Male
+        <input
+          onChange={handleChange}
+          checked={form.gender === "Female"}
+          type="radio"
+          name="gender"
+        />
+        Female
+        <br />
+        <button type="submit">Submit</button>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;
