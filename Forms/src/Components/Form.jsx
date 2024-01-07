@@ -20,7 +20,7 @@ const Form = () => {
   const submitForm = (event) => {
     event.preventDefault();
     console.log(form);
-    console.log("Form Submit");
+    alert(JSON.stringify(form));
   };
 
   return (
