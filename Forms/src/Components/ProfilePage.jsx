@@ -1,7 +1,13 @@
+import Menu from "../Pages/Menu"
+
 
 const ProfilePage = () => {
   return (
-    <div>This is ProfilePage</div>
+    
+      <>
+          <Menu />
+          <div>This is ProfilePage</div>
+      </>
   )
 }
 
