@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom"
+import {  HashRouter, Route, Routes } from "react-router-dom"
 import UseEffect from "./Components/UseEffect"
 import Form from "./Components/Form"
 import HomePage from "./Components/HomePage"
